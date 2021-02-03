@@ -4,6 +4,7 @@ public class Test {
     public static void main(String[] args) {
         MyArrayList myList = new MyArrayList();
         MyQueue myQueue = new MyQueue();
+        MyStack myStack = new MyStack();
         myList.add("first object");
         myList.add("second object");
         myList.add("third object");
@@ -38,5 +39,22 @@ public class Test {
         System.out.println(myQueue.size());
         System.out.println("First element of queue " + myQueue.peek());
 
+        System.out.println();
+        System.out.println("<--------------------------------------------------->");
+        System.out.println();
+
+        System.out.println(myQueue.size());
+        myStack.push("apple");
+        myStack.push("watermelon");
+        myStack.push("peach");
+        myStack.push("cherry");
+        myStack.push("grape");
+        myStack.push("apricot");
+        myStack.push("pinapple");
+        System.out.println(myQueue.size());
+        System.out.println("First element of queue " + myStack.peek());
+        myStack.poll();
+        System.out.println(myStack.size());
+        System.out.println("First element of queue " + myStack.peek());
     }
 }
