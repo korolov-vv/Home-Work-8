@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MyStack {
+public class MyStack implements MyList {
 
     Object[] myArr = new Object[0];
 

@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MyQueue {
+public class MyQueue implements MyList {
 
     Object[] myArr = new Object[0];
 

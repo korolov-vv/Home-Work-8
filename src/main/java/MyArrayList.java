@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MyArrayList {
+public class MyArrayList implements MyList {
     Object[] myArr = new Object[0];
 
     public void add(Object value) {
