@@ -28,7 +28,7 @@ public class MyStack implements MyList {
     } // добавляет элемент в конец
 
     public void remove(int index){
-        if(index > myArr.length){
+        if(index > myArr.length || index < 0){
             System.out.println("Enter correct index");
         }else
             for( ; index < myArr.length - 1; index++)
@@ -47,8 +47,11 @@ public class MyStack implements MyList {
         return myArr[myArr.length - 1];
     }// возвращает первый элемент в стеке (LIFO)
 
-    public void poll(){
-        for(int i = 0; i < myArr.length - 1; i++)
-            myArr[i] = myArr[i + 1];
+    public Object poll(){
+        Object firstElement;
+        if(myArr[0] == null){return "The element does not exist:(";}
+        firstElement = myArr[0];
+        System.arraycopy(myArr, 1, myArr, 0, myArr.length - 1);
+        return firstElement;
     }// возвращает первый элемент в очереди и удаляет его из коллекции
 }

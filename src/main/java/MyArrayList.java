@@ -27,7 +27,8 @@ public class MyArrayList implements MyList {
     } //добавляет элемент в конец
 
     public void remove(int index){
-        if(index > myArr.length){
+
+        if(index > myArr.length || index < 0){
             System.out.println("Enter correct index");
         }else
             for( ; index < myArr.length - 1; index++)
@@ -44,8 +45,11 @@ public class MyArrayList implements MyList {
     } //возвращает размер коллекции
 
     public Object get(int index){
-        if(index > myArr.length){
+        if(index > myArr.length || index < 0){
             System.out.println("Enter correct index");
+        }
+        if(myArr[index] == null){
+            return "The element does not exist:(";
         }
         return myArr[index];
     } // возвращает элемент под индексом
