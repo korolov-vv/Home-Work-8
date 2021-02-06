@@ -1,9 +1,10 @@
-public class Test {
+public class Test<K, V> {
     public static void main(String[] args) {
         MyArrayList myList = new MyArrayList();
         MyQueue myQueue = new MyQueue();
         MyStack myStack = new MyStack();
         MyLinkedList myLinkedList = new MyLinkedList();
+        MyHashMap<String, String> myHashMap = new MyHashMap<>();
 
         myList.add("first object");
         myList.add("second object");
@@ -77,5 +78,17 @@ public class Test {
         myLinkedList.clear();
         System.out.println(myLinkedList.size());
 
+        System.out.println();
+        System.out.println("><><><><><><><><><><><><><><><><><><><><><><><><><");
+        System.out.println();
+
+        myHashMap.put("AA9040BB", "Audi");
+        myHashMap.put("AA9041AX", "Opel");
+        myHashMap.put("AA8533BA", "Lada");
+        myHashMap.put("AA9087UY", "Ferrari");
+        myHashMap.put("AA9040BB", "Audi");
+        System.out.println(myHashMap.get("AA9041AX"));
+        myHashMap.remove("AA8533BA");
+        System.out.println(myHashMap.get("AA8533BA"));
     }
 }
