@@ -15,7 +15,7 @@ public class MyLinkedList implements MyList {
         }
         lastNode = newNode;
         size++;
-    }// добавляет элемент в конец
+    }
 
     public void remove(int index){
         if (index < 0 || index >= size) {
@@ -31,13 +31,13 @@ public class MyLinkedList implements MyList {
         nextElem.prev = prevElem;
         result.next = null;
         result.prev = null;
-    }// удаляет элемент под индексом
+    }
 
     public void clear(){
         firstNode = null;
         lastNode = null;
         size = 0;
-    }// очищает коллекцию
+    }
 
     public int size(){
         size = 1;
@@ -48,7 +48,7 @@ public class MyLinkedList implements MyList {
             size++;
         }
         return size;
-    }// возвращает размер коллекции
+    }
 
     public Object get(int index){
         if (index < 0 || index >= size) {
@@ -59,7 +59,7 @@ public class MyLinkedList implements MyList {
             result = result.next;
         }
         return result;
-    }// возвращает элемент под индексом
+    }
 
 
     private static class Node<Object> {

@@ -25,7 +25,7 @@ public class MyQueue implements MyList {
         }else {
             myArr[i] = value;
         }
-    } // добавляет элемент в конец
+    }
 
     public void remove(int index){
         if(index > myArr.length || index < 0){
@@ -33,20 +33,20 @@ public class MyQueue implements MyList {
         }else
             for( ; index < myArr.length - 1; index++)
                 myArr[index] = myArr[index + 1];
-    }// удаляет элемент под индексом
+    }
 
     public void clear(){
         myArr = Arrays.copyOf(myArr, 0);
-    }// очищает коллекцию
+    }
 
     public int size(){
         return myArr.length;
-    }// возвращает размер коллекции
+    }
 
     public Object peek(){
         if(myArr[0] == null){return "The element does not exist:(";}
         return myArr[0];
-    }// возвращает первый элемент в очереди (FIFO)
+    }
 
     public Object poll(){
         Object firstElement;
@@ -54,5 +54,5 @@ public class MyQueue implements MyList {
         firstElement = myArr[0];
         System.arraycopy(myArr, 1, myArr, 0, myArr.length - 1);
         return firstElement;
-    }// возвращает первый элемент в очереди и удаляет его из коллекции
+    }
 }

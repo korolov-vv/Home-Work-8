@@ -86,9 +86,12 @@ public class Test<K, V> {
         myHashMap.put("AA9041AX", "Opel");
         myHashMap.put("AA8533BA", "Lada");
         myHashMap.put("AA9087UY", "Ferrari");
-        myHashMap.put("AA9040BB", "Audi");
         System.out.println(myHashMap.get("AA9041AX"));
         myHashMap.remove("AA8533BA");
         System.out.println(myHashMap.get("AA8533BA"));
+        System.out.println("Size is " + myHashMap.size());
+        myHashMap.clear();
+        System.out.println(myHashMap.get("AA9041AX"));
+        System.out.println("Size = " + myHashMap.size());
     }
 }
