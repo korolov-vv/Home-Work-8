@@ -1,62 +1,72 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyArrayList implements MyList {
-    int DEFAULT_CAPACITY = 10;
-    Object[] myArr = new Object[DEFAULT_CAPACITY];
+
+    private Object[] myArr = new Object[getDEFAULT_CAPACITY()];
+
+    public int getDEFAULT_CAPACITY() {
+        int DEFAULT_CAPACITY = 10;
+        return DEFAULT_CAPACITY;
+    }
+
+    public Object[] getMyArr() {
+        return myArr;
+    }
+
+    public void setMyArr(Object[] myArr) {
+        this.myArr = myArr;
+    }
 
     public void add(Object value) {
         int i = 0;
-        while (i < myArr.length) {
-            if (myArr[i] != null) {
+        while (i < getMyArr().length) {
+            if (getMyArr()[i] != null) {
                 i++;
-            } else if ((i + 1) > myArr.length) {
-                myArr = Arrays.copyOf(myArr, (myArr.length * 2 + 1));
-                myArr[i] = value;
+            } else if ((i + 1) > getMyArr().length) {
+                setMyArr(Arrays.copyOf(getMyArr(), (getMyArr().length * 2 + 1)));
+                getMyArr()[i] = value;
                 break;
             } else {
-                myArr[i] = value;
+                getMyArr()[i] = value;
                 break;
             }
         }
-        if ((i + 1) > myArr.length) {
-            myArr = Arrays.copyOf(myArr, (myArr.length * 2 + 1));
-            myArr[i] = value;
-        } else {
-            myArr[i] = value;
+        if ((i + 1) > getMyArr().length) {
+            setMyArr(Arrays.copyOf(getMyArr(), (myArr.length * 2 + 1)));
         }
+        getMyArr()[i] = value;
     }
 
     public void remove(int index) {
 
-        if (index > myArr.length || index < 0) {
+        if (index > getMyArr().length || index < 0) {
             System.out.println("Enter correct index");
         }
 
-        for (; index < (myArr.length - 1); index++) {
-            myArr[index] = myArr[index + 1];
+        for (; index < (getMyArr().length - 1); index++) {
+            getMyArr()[index] = getMyArr()[index + 1];
         }
 
-        myArr = Arrays.copyOf(myArr, myArr.length - 1);
+        setMyArr(Arrays.copyOf(getMyArr(), getMyArr().length - 1));
 
     }
 
     public void clear() {
-        myArr = Arrays.copyOf(myArr, 0);
+        setMyArr(Arrays.copyOf(getMyArr(), 0));
     }
 
 
     public int size() {
-        return myArr.length;
+        return getMyArr().length;
     }
 
     public Object get(int index) {
-        if (index > myArr.length || index < 0) {
+        if (index > getMyArr().length || index < 0) {
             System.out.println("Enter correct index");
         }
-        if (myArr[index] == null) {
+        if (getMyArr()[index] == null) {
             return "The element does not exist:(";
         }
-        return myArr[index];
+        return getMyArr()[index];
     }
 }
