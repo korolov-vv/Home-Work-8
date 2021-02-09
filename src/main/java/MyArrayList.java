@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
 public class MyArrayList implements MyList {
-    Object[] myArr = new Object[0];
+    int DEFAULT_CAPACITY = 10;
+    Object[] myArr = new Object[DEFAULT_CAPACITY];
 
     public void add(Object value) {
         int i = 0;
