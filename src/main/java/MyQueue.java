@@ -12,8 +12,6 @@ public class MyQueue implements MyList {
         this.myArr = myArr;
     }
 
-
-
     public void add(Object value){
         int i = 0;
         while(i < getMyArr().length) {
@@ -40,9 +38,11 @@ public class MyQueue implements MyList {
     public void remove(int index){
         if(index > getMyArr().length || index < 0){
             System.out.println("Enter correct index");
-        }else
-            for( ; index < getMyArr().length - 1; index++)
+        }else {
+            for (; index < getMyArr().length - 1; index++)
                 getMyArr()[index] = getMyArr()[index + 1];
+        }
+        setMyArr(Arrays.copyOf(getMyArr(), getMyArr().length - 1));
     }
 
     public void clear(){

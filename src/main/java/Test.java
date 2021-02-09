@@ -27,7 +27,7 @@ public class Test<K, V> {
         System.out.println(myList.size());
 
         System.out.println();
-        System.out.println("<--------------------------------------------------->");
+        System.out.println("<--------------------QUEUE------------------------------->");
         System.out.println();
 
         System.out.println(myQueue.size());
@@ -38,17 +38,19 @@ public class Test<K, V> {
         myQueue.add(4);
         myQueue.add(5);
         myQueue.add(6);
-        System.out.println(myQueue.size());
+        System.out.println("Size before remove " + myQueue.size());
+        myQueue.remove(5);
+        System.out.println("Size after remove " + myQueue.size());
         System.out.println("First element of queue " + myQueue.peek());
         System.out.println(myQueue.poll());
         System.out.println(myQueue.size());
         System.out.println("First element of queue " + myQueue.peek());
 
         System.out.println();
-        System.out.println("<//////////////////////////////////////////////>");
+        System.out.println("<///////////////////STACK///////////////////////////>");
         System.out.println();
 
-        System.out.println(myQueue.size());
+
         myStack.push("apple");
         myStack.push("watermelon");
         myStack.push("peach");
@@ -63,7 +65,7 @@ public class Test<K, V> {
         System.out.println("First element of queue " + myStack.peek());
 
         System.out.println();
-        System.out.println("<*********************************************>");
+        System.out.println("<********************LinkedList*************************>");
         System.out.println();
 
         myLinkedList.add("first object");
@@ -80,7 +82,7 @@ public class Test<K, V> {
         System.out.println(myLinkedList.size());
 
         System.out.println();
-        System.out.println("><><><><><><><><><><><><><><><><><><><><><><><><><");
+        System.out.println("><><><><><><><><><>HashMap<><><><><><><><><><><><><><><><");
         System.out.println();
 
         myHashMap.put("AA9040BB", "Audi");
