@@ -12,17 +12,16 @@ public class MyQueue implements MyList {
         this.myArr = myArr;
     }
 
-    public void add(Object value){
+    public void add(Object value) {
         int i = 0;
-        while(i < getMyArr().length) {
-            if(getMyArr()[i] != null){
+        while (i < getMyArr().length) {
+            if (getMyArr()[i] != null) {
                 i++;
-            }else
-            if ((i + 1) > getMyArr().length) {
+            } else if ((i + 1) > getMyArr().length) {
                 setMyArr(Arrays.copyOf(getMyArr(), (getMyArr().length * 2 + 1)));
                 getMyArr()[i] = value;
                 break;
-            }else {
+            } else {
                 getMyArr()[i] = value;
                 break;
             }
@@ -30,37 +29,41 @@ public class MyQueue implements MyList {
         if ((i + 1) > getMyArr().length) {
             setMyArr(Arrays.copyOf(getMyArr(), (getMyArr().length * 2 + 1)));
             getMyArr()[i] = value;
-        }else {
+        } else {
             getMyArr()[i] = value;
         }
     }
 
-    public void remove(int index){
-        if(index > getMyArr().length || index < 0){
+    public void remove(int index) {
+        if (index > getMyArr().length || index < 0) {
             System.out.println("Enter correct index");
-        }else {
+        } else {
             for (; index < getMyArr().length - 1; index++)
                 getMyArr()[index] = getMyArr()[index + 1];
         }
         setMyArr(Arrays.copyOf(getMyArr(), getMyArr().length - 1));
     }
 
-    public void clear(){
+    public void clear() {
         setMyArr(Arrays.copyOf(getMyArr(), 0));
     }
 
-    public int size(){
+    public int size() {
         return getMyArr().length;
     }
 
-    public Object peek(){
-        if(getMyArr()[0] == null){return "The element does not exist:(";}
+    public Object peek() {
+        if (getMyArr()[0] == null) {
+            return "The element does not exist:(";
+        }
         return getMyArr()[0];
     }
 
-    public Object poll(){
+    public Object poll() {
         Object firstElement;
-        if(getMyArr()[0] == null){return "The element does not exist:(";}
+        if (getMyArr()[0] == null) {
+            return "The element does not exist:(";
+        }
         firstElement = getMyArr()[0];
         System.arraycopy(getMyArr(), 1, getMyArr(), 0, getMyArr().length - 1);
         return firstElement;

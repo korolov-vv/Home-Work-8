@@ -58,11 +58,14 @@ public class Test<K, V> {
         myStack.push("grape");
         myStack.push("apricot");
         myStack.push("pinapple");
-        System.out.println(myQueue.size());
+        System.out.println("Size before " + myStack.size());
+        myStack.remove(4);
+        System.out.println("Size after " + myStack.size());
         System.out.println("First element of queue " + myStack.peek());
-        myStack.poll();
+        myStack.pop();
         System.out.println(myStack.size());
         System.out.println("First element of queue " + myStack.peek());
+        System.out.println(myStack.pop());
 
         System.out.println();
         System.out.println("<********************LinkedList*************************>");
