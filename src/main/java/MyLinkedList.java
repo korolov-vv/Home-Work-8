@@ -1,27 +1,52 @@
 public class MyLinkedList implements MyList {
-    int size;
-    Node<Object> firstNode;
-    Node<Object> lastNode;
+
+    private int size;
+    private Node<Object> firstNode;
+    private Node<Object> lastNode;
+
+    public int getSize() {
+        return size;
+    }
+
+    public Node<Object> getFirstNode() {
+        return firstNode;
+    }
+
+    public Node<Object> getLastNode() {
+        return lastNode;
+    }
+
+    public void setFirstNode(Node<Object> firstNode) {
+        this.firstNode = firstNode;
+    }
+
+    public void setLastNode(Node<Object> lastNode) {
+        this.lastNode = lastNode;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 
     public void add(Object value){
         Node<Object> newNode = new Node<>(null, value, null);
-        if (firstNode == null) {
+        if (getFirstNode() == null) {
             newNode.next = null;
             newNode.prev = null;
-            firstNode = newNode;
+            setFirstNode(newNode);
         } else {
-            lastNode.next = newNode;
-            newNode.prev = lastNode;
+            getLastNode().next = newNode;
+            newNode.prev = getLastNode();
         }
-        lastNode = newNode;
+        setLastNode(newNode);
         size++;
     }
 
     public void remove(int index){
-        if (index < 0 || index >= size) {
+        if (index < 0 || index >= getSize()) {
             System.out.println("The element does not exist");
         }
-        Node<Object> result = firstNode;
+        Node<Object> result = getFirstNode();
         for (int i = 0; i < index; i++) {
             result = result.next;
         }
@@ -34,15 +59,15 @@ public class MyLinkedList implements MyList {
     }
 
     public void clear(){
-        firstNode = null;
-        lastNode = null;
-        size = 0;
+        setFirstNode(null);
+        setLastNode(null);
+        setSize(0);
     }
 
     public int size(){
-        size = 1;
-        if(firstNode == null){return 0;}
-        Node<Object> result = firstNode;
+        setSize(1);
+        if(getFirstNode() == null){return 0;}
+        Node<Object> result = getFirstNode();
         while (result.next != null){
             result = result.next;
             size++;
@@ -51,22 +76,22 @@ public class MyLinkedList implements MyList {
     }
 
     public Object get(int index){
-        if (index < 0 || index >= size) {
+        if (index < 0 || index >= getSize()) {
             System.out.println("The element does not exist");
         }
-        Node<Object> result = firstNode;
+        Node<Object> result = getFirstNode();
         for (int i = 0; i < index; i++) {
             result = result.next;
         }
-        return result;
+        return result.item;
     }
 
 
     private static class Node<Object> {
 
-        Object item;
-        MyLinkedList.Node<Object> next;
-        MyLinkedList.Node<Object> prev;
+        private Object item;
+        private MyLinkedList.Node<Object> next;
+        private MyLinkedList.Node<Object> prev;
 
         Node(MyLinkedList.Node<Object> prev, Object element, MyLinkedList.Node<Object> next) {
             this.item = element;

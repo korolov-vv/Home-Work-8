@@ -77,8 +77,8 @@ public class Test<K, V> {
         myLinkedList.add("fourth object");
         myLinkedList.add("fifth object");
         myLinkedList.add("sixth object");
-        System.out.println(myLinkedList.size());
-        System.out.println(myLinkedList.get(2));
+        System.out.println("The size is " + myLinkedList.size());
+        System.out.println("The second item is  " + myLinkedList.get(2));
         myLinkedList.remove(3);
         System.out.println(myLinkedList.size());
         myLinkedList.clear();
