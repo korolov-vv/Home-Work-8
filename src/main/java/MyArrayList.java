@@ -30,6 +30,7 @@ public class MyArrayList implements MyList {
                 getMyArr()[i] = value;
                 break;
             }
+            myArr = Arrays.copyOf(getMyArr(), i);
         }
         if ((i + 1) > getMyArr().length) {
             setMyArr(Arrays.copyOf(getMyArr(), (myArr.length * 2 + 1)));
@@ -57,14 +58,20 @@ public class MyArrayList implements MyList {
 
 
     public int size() {
+        if(getMyArr()[1] == null) {return 0;}
         return getMyArr().length;
     }
 
     public Object get(int index) {
-        if (index > getMyArr().length || index < 0) {
-            System.out.println("Enter correct index");
-        }
-        if (getMyArr()[index] == null) {
+
+        try {
+            if (index > getMyArr().length || index < 0) {
+                System.out.println("Enter correct index");
+            }
+            if (getMyArr()[index] == null) {
+                return "The element does not exist:(";
+            }
+        }catch (Exception e){
             return "The element does not exist:(";
         }
         return getMyArr()[index];

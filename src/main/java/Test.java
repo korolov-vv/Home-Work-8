@@ -6,9 +6,13 @@ public class Test<K, V> {
         MyLinkedList myLinkedList = new MyLinkedList();
         MyHashMap<String, String> myHashMap = new MyHashMap<>();
 
+        System.out.println("Size = " + myList.size());
+        myList.add(null);
         myList.add("first object");
+        System.out.println(myList.get(1));
         myList.add("second object");
         myList.add("third object");
+        System.out.println("Size = " + myList.size());
         myList.add("fourth object");
         myList.add("fifth object");
         myList.add("sixth object");
