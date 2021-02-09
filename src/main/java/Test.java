@@ -93,7 +93,9 @@ public class Test<K, V> {
         myHashMap.put("AA8533BA", "Lada");
         myHashMap.put("AA9087UY", "Ferrari");
         System.out.println(myHashMap.get("AA9041AX"));
+        System.out.println("The size before remove " + myHashMap.size());
         myHashMap.remove("AA8533BA");
+        System.out.println("The size after remove " + myHashMap.size());
         System.out.println(myHashMap.get("AA8533BA"));
         System.out.println("Size is " + myHashMap.size());
         myHashMap.clear();

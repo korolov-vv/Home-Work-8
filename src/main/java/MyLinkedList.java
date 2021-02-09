@@ -28,7 +28,7 @@ public class MyLinkedList implements MyList {
         this.size = size;
     }
 
-    public void add(Object value){
+    public void add(Object value) {
         Node<Object> newNode = new Node<>(null, value, null);
         if (getFirstNode() == null) {
             newNode.next = null;
@@ -42,7 +42,7 @@ public class MyLinkedList implements MyList {
         size++;
     }
 
-    public void remove(int index){
+    public void remove(int index) {
         if (index < 0 || index >= getSize()) {
             System.out.println("The element does not exist");
         }
@@ -58,24 +58,26 @@ public class MyLinkedList implements MyList {
         result.prev = null;
     }
 
-    public void clear(){
+    public void clear() {
         setFirstNode(null);
         setLastNode(null);
         setSize(0);
     }
 
-    public int size(){
+    public int size() {
         setSize(1);
-        if(getFirstNode() == null){return 0;}
+        if (getFirstNode() == null) {
+            return 0;
+        }
         Node<Object> result = getFirstNode();
-        while (result.next != null){
+        while (result.next != null) {
             result = result.next;
             size++;
         }
         return size;
     }
 
-    public Object get(int index){
+    public Object get(int index) {
         if (index < 0 || index >= getSize()) {
             System.out.println("The element does not exist");
         }
