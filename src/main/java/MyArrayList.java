@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyArrayList implements MyList {
@@ -6,15 +7,14 @@ public class MyArrayList implements MyList {
 
     public void add(Object value) {
         int i = 0;
-        while(i < myArr.length) {
-            if(myArr[i] != null){
+        while (i < myArr.length) {
+            if (myArr[i] != null) {
                 i++;
-            }else
-            if ((i + 1) > myArr.length) {
+            } else if ((i + 1) > myArr.length) {
                 myArr = Arrays.copyOf(myArr, (myArr.length * 2 + 1));
                 myArr[i] = value;
                 break;
-            }else {
+            } else {
                 myArr[i] = value;
                 break;
             }
@@ -22,34 +22,39 @@ public class MyArrayList implements MyList {
         if ((i + 1) > myArr.length) {
             myArr = Arrays.copyOf(myArr, (myArr.length * 2 + 1));
             myArr[i] = value;
-        }else {
+        } else {
             myArr[i] = value;
         }
     }
 
-    public void remove(int index){
+    public void remove(int index) {
 
-        if(index > myArr.length || index < 0){
+        if (index > myArr.length || index < 0) {
             System.out.println("Enter correct index");
-        }else
-            for( ; index < myArr.length - 1; index++)
-        myArr[index] = myArr[index + 1];
+        }
+
+        for (; index < (myArr.length - 1); index++) {
+            myArr[index] = myArr[index + 1];
+        }
+
+        myArr = Arrays.copyOf(myArr, myArr.length - 1);
+
     }
 
-    public void clear(){
+    public void clear() {
         myArr = Arrays.copyOf(myArr, 0);
     }
 
 
-    public int size(){
+    public int size() {
         return myArr.length;
     }
 
-    public Object get(int index){
-        if(index > myArr.length || index < 0){
+    public Object get(int index) {
+        if (index > myArr.length || index < 0) {
             System.out.println("Enter correct index");
         }
-        if(myArr[index] == null){
+        if (myArr[index] == null) {
             return "The element does not exist:(";
         }
         return myArr[index];

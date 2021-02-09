@@ -14,9 +14,10 @@ public class Test<K, V> {
         myList.add("sixth object");
         myList.add(null);
         System.out.println(myList.get(6));
-        System.out.println(myList.size());
+        System.out.println("Size before remove " + myList.size());
         System.out.println(myList.get(2));
         myList.remove(2);
+        System.out.println("Size after remove " + myList.size());
         myList.add("obj");
         System.out.println(myList.get(2));
         System.out.println(myList.get(5));
