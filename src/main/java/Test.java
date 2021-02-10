@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Test<K, V> {
     public static void main(String[] args) {
         MyArrayList myList = new MyArrayList();
@@ -13,6 +15,7 @@ public class Test<K, V> {
         myList.add("second object");
         myList.add("third object");
         System.out.println("Size = " + myList.size());
+        System.out.println(Arrays.toString(myList.getMyArr()));
         myList.add("fourth object");
         myList.add("fifth object");
         myList.add("sixth object");
@@ -27,7 +30,34 @@ public class Test<K, V> {
         System.out.println(myList.get(5));
         System.out.println(myList.size());
         myList.clear();
-        myList.clear();
+        System.out.println(myList.size());
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
+        myList.add("sixth object");
         System.out.println(myList.size());
 
         System.out.println();

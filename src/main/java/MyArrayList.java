@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class MyArrayList implements MyList {
 
     private Object[] myArr = new Object[getDEFAULT_CAPACITY()];
+    private int numberOfElements = 0;
 
     public int getDEFAULT_CAPACITY() {
         int DEFAULT_CAPACITY = 10;
@@ -18,24 +19,23 @@ public class MyArrayList implements MyList {
     }
 
     public void add(Object value) {
+
+        if ((numberOfElements + 1) > getMyArr().length) {
+            setMyArr(Arrays.copyOf(getMyArr(), (myArr.length * 2 + 1)));
+        }
+
         int i = 0;
         while (i < getMyArr().length) {
             if (getMyArr()[i] != null) {
                 i++;
-            } else if ((i + 1) > getMyArr().length) {
-                setMyArr(Arrays.copyOf(getMyArr(), (getMyArr().length * 2 + 1)));
-                getMyArr()[i] = value;
-                break;
             } else {
                 getMyArr()[i] = value;
+                i++;
+                numberOfElements = i;
                 break;
             }
-            myArr = Arrays.copyOf(getMyArr(), i);
+
         }
-        if ((i + 1) > getMyArr().length) {
-            setMyArr(Arrays.copyOf(getMyArr(), (myArr.length * 2 + 1)));
-        }
-        getMyArr()[i] = value;
     }
 
     public void remove(int index) {
@@ -53,13 +53,13 @@ public class MyArrayList implements MyList {
     }
 
     public void clear() {
-        setMyArr(Arrays.copyOf(getMyArr(), 0));
+        myArr = Arrays.copyOf(getMyArr(), 0);
+        numberOfElements = 0;
     }
 
 
     public int size() {
-        if(getMyArr()[1] == null) {return 0;}
-        return getMyArr().length;
+        return numberOfElements;
     }
 
     public Object get(int index) {
