@@ -56,6 +56,7 @@ public class MyLinkedList implements MyList {
         nextElem.prev = prevElem;
         result.next = null;
         result.prev = null;
+        size--;
     }
 
     public void clear() {

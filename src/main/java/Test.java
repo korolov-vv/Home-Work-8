@@ -8,6 +8,7 @@ public class Test<K, V> {
         MyLinkedList myLinkedList = new MyLinkedList();
         MyHashMap<String, String> myHashMap = new MyHashMap<>();
 
+        System.out.println("-------------------------ArrayList--------------------------");
         System.out.println("Size = " + myList.size());
         myList.add(null);
         myList.add("first object");
@@ -114,7 +115,7 @@ public class Test<K, V> {
         System.out.println("The size is " + myLinkedList.size());
         System.out.println("The second item is  " + myLinkedList.get(2));
         myLinkedList.remove(3);
-        System.out.println(myLinkedList.size());
+        System.out.println("The size after remove " + myLinkedList.size());
         myLinkedList.clear();
         System.out.println(myLinkedList.size());
 

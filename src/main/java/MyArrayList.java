@@ -49,7 +49,7 @@ public class MyArrayList implements MyList {
         }
 
         setMyArr(Arrays.copyOf(getMyArr(), getMyArr().length - 1));
-
+        numberOfElements--;
     }
 
     public void clear() {
